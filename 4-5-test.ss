@@ -275,3 +275,11 @@
 (define expr '((lambda (x) (set! x 2)) 3))
 
 (compile expr '() '() '(halt))
+
+;; need better test
+(define (my-f x)
+  (let ([l (lambda () (begin x))])
+    (set! x 3)
+    (l)))
+
+(my-f 10)
