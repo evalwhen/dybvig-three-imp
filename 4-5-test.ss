@@ -271,3 +271,7 @@
               (list 'box n (f (cdr vars) (+ n 1)))
               (f (cdr vars) (+ n 1)))))))
 
+;; tests
+(define expr '((lambda (x) (set! x 2)) 3))
+
+(compile expr '() '() '(halt))

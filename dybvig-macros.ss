@@ -2,7 +2,10 @@
 (provide (all-defined-out))
 
 (define-syntax-rule (record val (var ...) exp ...)
-  (apply (lambda (var ...) exp ...) val))
+  (begin
+    ;; (displayln val)
+    ;; (display var ...)
+    (apply (lambda (var ...) exp ...) val)))
 
 (define-syntax record-case
   (syntax-rules (else)
